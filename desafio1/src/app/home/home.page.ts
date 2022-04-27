@@ -19,15 +19,18 @@ export class HomePage implements OnInit {
    this.getAllPoke();
  }
 getAllPoke(){
-  this.pokeService.getListPoke().subscribe(data=>{
-    this.listaPoke = data['results'];
+
+  this.pokeService.getTeste().subscribe(data=>{
+    this.listaPoke  = data['results'];
   })
 }
 abriDetalhePoke(poke:any){
-  let url = poke.url;
+// debugger;
+  let url = new URL( poke.url).pathname;
+  let parts = url.split("/");
   let navigationPokeParam: NavigationExtras = {
     queryParams: {
-      url:url,
+      id:parts[4],
     }
 }
 this.navPoke.navigateForward(['poke-detalhe'],navigationPokeParam)

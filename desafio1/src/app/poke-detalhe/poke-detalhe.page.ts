@@ -9,7 +9,7 @@ import { PokeService } from '../api/poke.service';
   styleUrls: ['./poke-detalhe.page.scss'],
 })
 export class PokeDetalhePage implements OnInit {
-  pokeUrl:any
+  id:any
   pokeDetalhe:any
   pokeHabilidades: any
   pokeName:any
@@ -17,18 +17,17 @@ export class PokeDetalhePage implements OnInit {
   constructor(public navCtrl: NavController, private route: ActivatedRoute, private getPoke: PokeService) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => { this.pokeUrl=params["url"]});
+    this.route.queryParams.subscribe(params => { this.id=params["id"]});
   this.getDetalhe();
   
   
   }
   getDetalhe(){
-    this.getPoke.getPokeDetalhe(this.pokeUrl).subscribe(data =>{
+    this.getPoke.getPokeDetalhe(this.id).subscribe(data =>{
       console.log(data);
       this.arrayHabilidade=[]
       this.pokeDetalhe = data['sprites']['other']['home']['front_default'];
       for(let i =0;i<data['abilities']['length'];i++){
-
       this.arrayHabilidade.push(data['abilities'][i]['ability']['name'])
       }
       this.pokeHabilidades =  this.arrayHabilidade.sort()
