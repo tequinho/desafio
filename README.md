@@ -10,14 +10,14 @@ A INCLUSÃO DE UM PROXY PARA NÃO TERMOS A REQUISIÇÃO CROSS-ORIGIN BLOQUEADA.
 4 - VALE RESSALTAR QUE A PORTA RODADA PELO IONIC É 4200 E A DO PHP É 80.
 
 
-5- Pagina 1
+5- Página 1
 
 
 ![image](https://user-images.githubusercontent.com/45670719/165624689-57c660ba-986b-4dd9-970b-d83e1d970c89.png)
 
 
 
-6- Pagina 2
+6- Página 2
 
 
 
